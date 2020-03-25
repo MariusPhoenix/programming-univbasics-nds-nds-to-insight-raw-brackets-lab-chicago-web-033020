@@ -8,22 +8,24 @@ def directors_totals(nds)
   index_dr = 0
   # The Hash result be full of things like "Jean-Pierre Jeunet" => "222312123123"
   result = {}
-  while index_dr < nds.length do
-    
-    
-    director = nds[index_dr][:name]
-    movies = nds[index_dr][:movies]
-    
-    index = 0
-    total = 0
-    while index < movies.length do
-      total = total + movies[index][:worldwide_gross]
-      index += 1
+  
+  while index_dr<nds.length do
+  puts nds[index_dr][:name]
+  total = 0
+  director = nds[index_dr][:name]
+  movie = nds[index_dr][:movies]
+  index_movies = 0
+  
+    while index_movies < movie.length do
+      
+      total = total + movie[index_movies][:worldwide_gross]
+    index_movies += 1
     end
     result[director] = total
-    
-    index_dr +=1
+  index_dr +=1
   end
+  
+  
   
   
   # Remember, it's always OK to pretty print what you get *in* to make sure
